@@ -1,12 +1,16 @@
 ﻿using System;
 using ConsoleApp1;
-using System.Collections.Generic;
 using System.Linq;
-using System.Xml;
 
-var inpout = "32 + 123";//Console.ReadLine();
+
+var inpout = "66 + 123";//Console.ReadLine();
 var tokens = Tokenized(inpout);
 Console.WriteLine(tokens);
+var nOfTokens = tokens.lenOf();
+for (var stackElement = 0; stackElement != nOfTokens; stackElement++)
+{
+  Console.WriteLine(tokens.Pop());
+}
 /*
 var postfixTokens = InfixToPostfix(tokens);
 var result = Calculate((postfixTokens));
@@ -14,42 +18,35 @@ var result = Calculate((postfixTokens));
 
 Stack Tokenized(string expression)
 {
-  /*var _numbersStr = "1234567890";
-  string[] numbersList = new String[10];
-  for (var i = 0; i != 10; i++)
-  {
-    var _localstr = _numbersStr[i];
-    numbersList[i] =  ToString(_localstr);
-  }
-  Console.WriteLine(numbersList[5]);
-  */
   string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-  var numbers = new arrayList();
-  var _tokens = new Stack();
+  string[] mathChars = {"+", "-", "*", "/"};
+  var numbers = new Fifo();
+  var localTocensFilo = new Stack();
 
-  for (var i = 0; i != expression.Length; i++)
+  for (var index = 0; index != expression.Length; index++)
   {
-    var element = expression[i].ToString();
-    if (numbersList.Contains(element) == true)
+    var element = expression[index].ToString();
+    if (numbersList.Contains(element))
     {
       numbers.Push(element);
     }
     if (element == " " && numbers.lenOf() != 0)
     {
-      var _pressedNumber = "";
-      for (var b = 0; b != numbers.lenOf() - 1; b++)
+      var pressedNumberToTocen = "";
+      var lenOfNumbersPastMoment = numbers.lenOf();
+      Console.WriteLine(lenOfNumbersPastMoment);
+      for (var b = 0; b != lenOfNumbersPastMoment; b++)
       {
-        _pressedNumber += numbers.Pop();
+        pressedNumberToTocen += numbers.Pop();
       }
-      _tokens.Push(_pressedNumber); 
+      localTocensFilo.Push(pressedNumberToTocen);
+    }
+    if (mathChars.Contains(element))
+    {
+      localTocensFilo.Push(element);
+    }
   }
-  }
-
-  for (var i = 0; i != _tokens.lenOf(); i++)
-  {
-    Console.WriteLine(_tokens);
-  }
-  return _tokens;
+  return localTocensFilo;
 }
 /*
 List<string> InfixToPostfix(int[] expression)

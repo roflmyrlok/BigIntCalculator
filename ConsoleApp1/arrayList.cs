@@ -2,80 +2,40 @@
 
 namespace ConsoleApp1
 {
-    public class arrayList
+    public class Fifo
     {
-        private string[] _array = new String[10];
+        private string[] _array = new String[50];
 
-        private int _tailPointer = 0;
+        private int _pointer = 0;
 
         public int lenOf()
         {
-            return _tailPointer;
+            return _pointer;
         }
-        
-        public void Insert(int index, string element)
-        {
-            if (_tailPointer >= _array.Length)
-            {
-                var extendetArray = new String[_array.Length * 2];
-                for (var i = 0; i < _array.Length; i++)
-                {
-                    extendetArray[i] = _array[i];
-                }
-
-                _array = extendetArray;
-            }
-            for (var i = _tailPointer; i != index; i--)
-            {
-                _array[i] = _array[i - 1];
-            }
-            _array[index] = element;
-            _tailPointer += 1;
-        }
-        
-        public void Remove(string element)
-        {
-            var index = indexOf(element);
-            
-            if (index == -1)
-            {
-                return;
-            }
-
-            _array[index] = 'o'.ToString();
-            for (var i = index; i < _array.Length - 1; i++)
-            {
-                _array[i] = _array[i + 1];
-            }
-
-            _tailPointer -= 1;
-        }
-        
         public string Pop()
         {
             var lastElement = _array[0];
-            _array[_tailPointer - 1] = "o";
-            _tailPointer -= 1;
+            for (var i = 0; i != _pointer; i++)
+            {
+                _array[i] = _array[i + 1];
+            }
+            _pointer -= 1;
             return lastElement;
         }
+        
         public void Push(string element)
         {
-            Insert(_tailPointer, element);
-        }
-
-        public int indexOf(string element)
-        {
-            var index = -1;
-            for (var i = 0; i < _array.Length; i++)
+            if (_pointer == _array.Length)
             {
-                if (element == _array[i])
-                {
-                    index = i;
-                    break;
-                }
+                throw new Exception("stack overflow");
             }
-
-            return index;
+            _array[_pointer] = element;
+            _pointer += 1;
+        }
+        
+        public object Seek()
+        {
+            return _array[_pointer - 1];
         }
     }
 }
