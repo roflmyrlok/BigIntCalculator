@@ -1,11 +1,11 @@
-﻿using System;
+﻿
+using System;
 using ConsoleApp1;
 using System.Linq;
 
-
-var inpout = "66 + 123";//Console.ReadLine();
+var inpout = "66 + (123 - 33 * 23) * 123 ";//Console.ReadLine();
+inpout += " ";
 var tokens = Tokenized(inpout);
-Console.WriteLine(tokens);
 var nOfTokens = tokens.lenOf();
 for (var stackElement = 0; stackElement != nOfTokens; stackElement++)
 {
@@ -19,7 +19,7 @@ var result = Calculate((postfixTokens));
 Stack Tokenized(string expression)
 {
   string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-  string[] mathChars = {"+", "-", "*", "/"};
+  string[] mathChars = {"+", "-", "*", "/", "(", ")"};
   var numbers = new Fifo();
   var localTocensFilo = new Stack();
 
@@ -30,11 +30,10 @@ Stack Tokenized(string expression)
     {
       numbers.Push(element);
     }
-    if (element == " " && numbers.lenOf() != 0)
+    if (!numbersList.Contains(element) && numbers.lenOf() != 0)
     {
       var pressedNumberToTocen = "";
       var lenOfNumbersPastMoment = numbers.lenOf();
-      Console.WriteLine(lenOfNumbersPastMoment);
       for (var b = 0; b != lenOfNumbersPastMoment; b++)
       {
         pressedNumberToTocen += numbers.Pop();
@@ -47,6 +46,7 @@ Stack Tokenized(string expression)
     }
   }
   return localTocensFilo;
+  
 }
 /*
 List<string> InfixToPostfix(int[] expression)
