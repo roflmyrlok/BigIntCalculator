@@ -2,7 +2,7 @@
 
 namespace ConsoleApp1
 {
-    public class Fifo
+    public class RawFifo
     {
         private string[] _array = new String[50];
 

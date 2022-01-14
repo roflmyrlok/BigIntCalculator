@@ -4,17 +4,16 @@
     <projectFile>ConsoleApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf8b1e38-2e4e-4c13-8dcb-7a0cedbb3746" name="Changes" comment="tocenizer is finished but not fully. list changed to row">
+    <list default="true" id="bf8b1e38-2e4e-4c13-8dcb-7a0cedbb3746" name="Changes" comment="tocenizer is fully finished">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Raw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Raw.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ConsoleApp1.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ref/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ref/ConsoleApp1.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ref/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ref/ConsoleApp1.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,7 @@
       <workItem from="1642149100164" duration="105000" />
       <workItem from="1642149259904" duration="5509000" />
       <workItem from="1642157135590" duration="7859000" />
-      <workItem from="1642166527681" duration="1347000" />
+      <workItem from="1642166527681" duration="8022000" />
     </task>
     <task id="LOCAL-00001" summary="1attempt">
       <created>1642161730612</created>
@@ -120,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642165009069</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="tocenizer is fully finished">
+      <created>1642168415498</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1642168415499</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +151,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="1attempt" />
     <MESSAGE value="tocenizer is finished but not fully. list changed to row" />
-    <option name="LAST_COMMIT_MESSAGE" value="tocenizer is finished but not fully. list changed to row" />
+    <MESSAGE value="tocenizer is fully finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="tocenizer is fully finished" />
   </component>
 </project>
