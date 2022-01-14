@@ -1,0 +1,15 @@
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.deps.json
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.runtimeconfig.json
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.runtimeconfig.dev.json
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.dll
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/bin/Debug/net5.0/ref/ConsoleApp1.dll
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/bin/Debug/net5.0/ConsoleApp1.pdb
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.csproj.AssemblyReference.cache
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.AssemblyInfoInputs.cache
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.AssemblyInfo.cs
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.csproj.CoreCompileInputs.cache
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.dll
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ref/ConsoleApp1.dll
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.pdb
+/Users/atrybushnyi/Documents/GitHub/t3_lab1/ConsoleApp1/obj/Debug/net5.0/ConsoleApp1.genruntimeconfig.cache
