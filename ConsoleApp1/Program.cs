@@ -20,6 +20,11 @@ while (go)
       {
         w8.Add(tokens[j]);
       }
+
+      if (tokens[i - 1] == "(" || tokens[i + 1] == "(" || tokens[i + 1] == ")" || tokens[i - 1] == ")")
+      {
+        break;
+      }
       w8.Add("(");
       w8.Add(tokens[i - 1]);
       w8.Add(tokens[i]);
