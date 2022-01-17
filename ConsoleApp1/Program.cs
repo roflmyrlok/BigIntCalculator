@@ -90,7 +90,6 @@ List<string> InfixToPostfix(List<string> expression)
   var postfixList = new List<string>();
   var operatorStuck = new ConsoleApp1.Stack<string>();
   string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-  string[] mathHighChars = {"*", "/", "^"};
   var nOfTokens = expression.Count;
   var currentElement = 0;
   while (currentElement != nOfTokens)
@@ -106,34 +105,9 @@ List<string> InfixToPostfix(List<string> expression)
         operatorStuck.Push(element);
       if (element == "+" || element == "-")
       {
-        /*var niceAction = true;
-        for (var i = currentElement; niceAction; i++)
-        {
-          if (i == expression.Count || expression[i] == "(" || expression[i] == ")")
-          {
-            break;
-          }
-          if (mathHighChars.Contains(expression[i]))
-          {
-            
-            niceAction = false;
-          }
-        }*/
         operatorStuck.Push((element));
       }
-      /*
-      {
-        var checkerIsWorking = true;
-        var index = 1;
-        while (checkerIsWorking)
-        {
-          if (mathHighChars.Contains(element + index) && index != expression.lenOf())
-          {
-            checkerIsWorking = false;
-            elementHighValue = 
-          }
-          index++;
-          */
+      
       if (element == ")")
       {
         while (operatorStuck.lenOf() != 0)
