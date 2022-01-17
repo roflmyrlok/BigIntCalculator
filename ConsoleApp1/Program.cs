@@ -1,27 +1,45 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using ConsoleApp1;
 using System.Linq;
 
-var inpout = "66 + (123 - 33 * 23) * 123 ";//Console.ReadLine();
-inpout += " ";
-var tokens = Tokenized(inpout);
-var nOfTokens = tokens.lenOf();
-/*for (var stackElement = 0; stackElement != nOfTokens ; stackElement++)
+var go = true;
+while (go)
 {
-  Console.WriteLine(tokens.Pop());
-}*/
-var postfixTokens = InfixToPostfix(tokens);
-var nOfTokens2 = postfixTokens.lenOf();
-for (var stackElement = 0; stackElement != nOfTokens2; stackElement++)
-{
-  Console.WriteLine(postfixTokens.Pop());
+  var inpout = Console.ReadLine();
+  inpout += " ";
+  var tokens = Tokenized(inpout);
+  for (var i = 0; i != tokens.Count; i++)
+  {
+    var element = tokens[i];
+    if (element == "*" || element == "/" || element == "^")
+    {
+      var w8 = new List<string>();
+      for (int j = 0; j < i - 1; j++)
+      {
+        w8.Add(tokens[j]);
+      }
+      w8.Add("(");
+      w8.Add(tokens[i - 1]);
+      w8.Add(tokens[i]);
+      w8.Add(tokens[i + 1]);
+      w8.Add(")");
+      for (int j = i + 2; j < tokens.Count; j++)
+      {
+        w8.Add(tokens[j]);
+      }
+
+      tokens = w8;
+      i += 2;
+    }
+  }
+  var postfixTokens = InfixToPostfix(tokens);
+  var result = Calculate((postfixTokens));
+  Console.WriteLine(result);
 }
 
-var result = Calculate((postfixTokens));
-Console.WriteLine(result);
-
-RawFifo Tokenized(string expression)
+List<string> Tokenized(string expression)
 {
   string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
   string[] mathChars = {"+", "-", "*", "/", "(", ")", "^"};
@@ -50,22 +68,32 @@ RawFifo Tokenized(string expression)
       localTocensFilo.Push(element);
     }
   }
-  return localTocensFilo;
+  //fifo to list revriter
+  var answearShit = new List<string>();
+  while (localTocensFilo.lenOf() != 0)
+  {
+    var a = localTocensFilo.Pop();
+    answearShit.Add(a);
+  }
+  return answearShit;
   
 }
 
-RawFifo InfixToPostfix(RawFifo expression)
+
+List<string> InfixToPostfix(List<string> expression)
 {
-  var postfixRaw = new RawFifo();
-  var operatorStuck = new Stack();
+  var postfixList = new List<string>();
+  var operatorStuck = new ConsoleApp1.Stack<string>();
   string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-  //string[] mathHighChars = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "*", "/", "(", ")", "^"};
-  while (expression.lenOf() != 0)
+  string[] mathHighChars = {"*", "/", "^"};
+  var nOfTokens = expression.Count;
+  var currentElement = 0;
+  while (currentElement != nOfTokens)
   {
-    var element = expression.Pop();
-    if (numbersList.Contains(element))
+    var element = expression[currentElement];
+    if (int.TryParse(element, out _))
     {
-      postfixRaw.Push(element);
+      postfixList.Add(element);
     }
     if (!numbersList.Contains(element))
     {
@@ -73,6 +101,19 @@ RawFifo InfixToPostfix(RawFifo expression)
         operatorStuck.Push(element);
       if (element == "+" || element == "-")
       {
+        /*var niceAction = true;
+        for (var i = currentElement; niceAction; i++)
+        {
+          if (i == expression.Count || expression[i] == "(" || expression[i] == ")")
+          {
+            break;
+          }
+          if (mathHighChars.Contains(expression[i]))
+          {
+            
+            niceAction = false;
+          }
+        }*/
         operatorStuck.Push((element));
       }
       /*
@@ -86,7 +127,8 @@ RawFifo InfixToPostfix(RawFifo expression)
             checkerIsWorking = false;
             elementHighValue = 
           }
-          index++;*/
+          index++;
+          */
       if (element == ")")
       {
         while (operatorStuck.lenOf() != 0)
@@ -96,29 +138,78 @@ RawFifo InfixToPostfix(RawFifo expression)
           {
             break;
           }
-          postfixRaw.Push(firstStep);
+          postfixList.Add(firstStep);
         }
       }
     }
+
+    currentElement++;
   }
 
   while (operatorStuck.lenOf() != 0)
   {
+    
     var lastOPer = operatorStuck.Pop();
     if (lastOPer != "(")
     {
-      postfixRaw.Push(lastOPer);
+      postfixList.Add(lastOPer);
     }
   }
-  return postfixRaw;
+  return postfixList;
 }
 
 
-int Calculate(RawFifo expression)
+int Calculate(List<string> expression)
 {
-  return 42;
+  var stackToWorkWith = new ConsoleApp1.Stack<string>();
+  var turn = 0;
+  while (turn != expression.Count)
+  {
+    var element = expression[turn];
+    if (int.TryParse(element, out _))
+    {
+      stackToWorkWith.Push(element);
+    }
+
+    if (element == "+")
+    {
+      var a = int.Parse(stackToWorkWith.Pop());
+      var b = int.Parse(stackToWorkWith.Pop());
+      var c = a + b;
+      stackToWorkWith.Push(c.ToString());
+    }
+    if (element == "-")
+    {
+      var a = int.Parse(stackToWorkWith.Pop());
+      var b = int.Parse(stackToWorkWith.Pop());
+      var c = a - b;
+      stackToWorkWith.Push(c.ToString());
+    }
+    if (element == "/")
+    {
+      var a = int.Parse(stackToWorkWith.Pop());
+      var b = int.Parse(stackToWorkWith.Pop());
+      var c = a / b;
+      stackToWorkWith.Push(c.ToString());
+    }
+    if (element == "*")
+    {
+      var a = int.Parse(stackToWorkWith.Pop());
+      var b = int.Parse(stackToWorkWith.Pop());
+      var c = a * b;
+      stackToWorkWith.Push(c.ToString());
+    }
+    if (element == "^")
+    {
+      var a = int.Parse(stackToWorkWith.Pop());
+      var b = int.Parse(stackToWorkWith.Pop());
+      var c = Math.Pow(a, b).ToString();
+      stackToWorkWith.Push(c);
+    }
+    turn++;
+  }
+
+  return int.Parse(stackToWorkWith.Pop());
 }
 
-
-Console.WriteLine(777);
 
