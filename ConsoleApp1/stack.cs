@@ -2,9 +2,9 @@
 
 namespace ConsoleApp1
 {
-    public class Stack
+    public class Stack<T>
     {
-        private string[] _array = new String[50];
+        private T[] _array = new T[300];
 
         private int _pointer = 0;
 
@@ -12,14 +12,14 @@ namespace ConsoleApp1
         {
             return _pointer;
         }
-        public string Pop()
+        public T Pop()
         {
             var lastElement = _array[_pointer - 1];
             _pointer -= 1;
             return lastElement;
         }
         
-        public void Push(string element)
+        public void Push(T element)
         {
             if (_pointer == _array.Length)
             {
