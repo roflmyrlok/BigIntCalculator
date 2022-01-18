@@ -90,7 +90,6 @@ List<string> InfixToPostfix(List<string> expression)
   var postfixList = new List<string>();
   var operatorStuck = new ConsoleApp1.Stack<string>();
   string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-  string[] mathHighChars = {"*", "/", "^"};
   var nOfTokens = expression.Count;
   var currentElement = 0;
   while (currentElement != nOfTokens)
