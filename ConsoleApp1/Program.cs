@@ -106,34 +106,10 @@ List<string> InfixToPostfix(List<string> expression)
         operatorStuck.Push(element);
       if (element == "+" || element == "-")
       {
-        /*var niceAction = true;
-        for (var i = currentElement; niceAction; i++)
-        {
-          if (i == expression.Count || expression[i] == "(" || expression[i] == ")")
-          {
-            break;
-          }
-          if (mathHighChars.Contains(expression[i]))
-          {
-            
-            niceAction = false;
-          }
-        }*/
+
         operatorStuck.Push((element));
       }
-      /*
-      {
-        var checkerIsWorking = true;
-        var index = 1;
-        while (checkerIsWorking)
-        {
-          if (mathHighChars.Contains(element + index) && index != expression.lenOf())
-          {
-            checkerIsWorking = false;
-            elementHighValue = 
-          }
-          index++;
-          */
+
       if (element == ")")
       {
         while (operatorStuck.lenOf() != 0)

@@ -1,10 +1,11 @@
 ﻿using System;
+using Microsoft.VisualBasic;
 
 namespace ConsoleApp1
 {
     public class Stack<T>
     {
-        private T[] _array = new T[300];
+        private T[] _array = new T[50];
 
         private int _pointer = 0;
 
@@ -23,7 +24,15 @@ namespace ConsoleApp1
         {
             if (_pointer == _array.Length)
             {
-                throw new Exception("stack overflow");
+                //throw new Exception("stack overflow");
+                int n = _pointer * 2;
+                T[] _arrayToReplace = new T[n];
+                for (int i = 0; i < _pointer; i++)
+                {
+                    _arrayToReplace[i] = _array[i];
+                }
+
+                _array = _arrayToReplace;
             }
             _array[_pointer] = element;
             _pointer += 1;
