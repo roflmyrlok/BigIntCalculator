@@ -183,7 +183,7 @@ int Calculate(List<string> expression)
     {
       var a = int.Parse(stackToWorkWith.Pop());
       var b = int.Parse(stackToWorkWith.Pop());
-      var c = Math.Pow(a, b).ToString();
+      var c = Math.Pow(b, a).ToString();
       stackToWorkWith.Push(c);
     }
     turn++;

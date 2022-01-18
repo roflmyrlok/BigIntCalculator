@@ -4,9 +4,7 @@
     <projectFile>ConsoleApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf8b1e38-2e4e-4c13-8dcb-7a0cedbb3746" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bf8b1e38-2e4e-4c13-8dcb-7a0cedbb3746" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +84,7 @@
       <workItem from="1642166527681" duration="14205000" />
       <workItem from="1642408284538" duration="9346000" />
       <workItem from="1642418116968" duration="5224000" />
-      <workItem from="1642461312509" duration="4581000" />
+      <workItem from="1642461312509" duration="4920000" />
     </task>
     <task id="LOCAL-00001" summary="1attempt">
       <created>1642161730612</created>
@@ -130,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642464375120</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix 5">
+      <created>1642493956443</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642493956443</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +164,26 @@
     <MESSAGE value="some problems with numbers push while changing notation" />
     <MESSAGE value="finished version" />
     <MESSAGE value="Fix.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix.4" />
+    <MESSAGE value="fix 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix 5" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Program.cs</url>
+          <line>185</line>
+          <properties documentPath="D:\Мои Документы\GitHub\t3_lab1\ConsoleApp1\Program.cs" initialLine="185" containingFunctionPresentation="local function 'Calculate'">
+            <startOffsets>
+              <option value="4437" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4471" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
