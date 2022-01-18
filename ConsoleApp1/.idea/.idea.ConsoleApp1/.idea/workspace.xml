@@ -4,7 +4,14 @@
     <projectFile>ConsoleApp1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf8b1e38-2e4e-4c13-8dcb-7a0cedbb3746" name="Changes" comment="" />
+    <list default="true" id="bf8b1e38-2e4e-4c13-8dcb-7a0cedbb3746" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleApp1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net5.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net5.0/ConsoleApp1.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net5.0/ConsoleApp1.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.49619773" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -84,7 +92,7 @@
       <workItem from="1642166527681" duration="14205000" />
       <workItem from="1642408284538" duration="9346000" />
       <workItem from="1642418116968" duration="5224000" />
-      <workItem from="1642461312509" duration="4920000" />
+      <workItem from="1642461312509" duration="7252000" />
     </task>
     <task id="LOCAL-00001" summary="1attempt">
       <created>1642161730612</created>
@@ -135,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642493956443</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="^.fix">
+      <created>1642494363024</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1642494363024</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,25 +180,36 @@
     <MESSAGE value="finished version" />
     <MESSAGE value="Fix.4" />
     <MESSAGE value="fix 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix 5" />
+    <MESSAGE value="^.fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="^.fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Program.cs</url>
-          <line>185</line>
-          <properties documentPath="D:\Мои Документы\GitHub\t3_lab1\ConsoleApp1\Program.cs" initialLine="185" containingFunctionPresentation="local function 'Calculate'">
+          <line>91</line>
+          <properties documentPath="D:\Мои Документы\GitHub\t3_lab1\ConsoleApp1\Program.cs" initialLine="94" containingFunctionPresentation="local function 'Tokenized'">
             <startOffsets>
-              <option value="4437" />
+              <option value="2212" />
             </startOffsets>
             <endOffsets>
-              <option value="4471" />
+              <option value="2231" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Frame#&lt;Program&gt;$.&lt;&lt;Main&gt;$&gt;g__Tokenized|0_0" memberName="index" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="DotNetProject">
+        <watch expression="mathChars" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

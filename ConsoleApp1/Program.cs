@@ -7,9 +7,10 @@ using System.Linq;
 var go = true;
 while (go)
 {
-  var inpout = Console.ReadLine();
-  inpout += " ";
-  var tokens = Tokenized(inpout);
+  Console.WriteLine("Write an equation:");
+  var input = Console.ReadLine();
+  input += " ";
+  var tokens = Tokenized(input);
   for (var i = 0; i != tokens.Count; i++)
   {
     var element = tokens[i];
@@ -46,14 +47,22 @@ while (go)
 
 List<string> Tokenized(string expression)
 {
-  string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-  string[] mathChars = {"+", "-", "*", "/", "(", ")", "^"};
+  string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-" };
+  string[] mathChars = {"+", "*", "/", "(", ")", "^"};
   var numbers = new RawFifo();
   var localTocensFilo = new RawFifo();
 
   for (var index = 0; index != expression.Length; index++)
   {
     var element = expression[index].ToString();
+    if (element == "-")
+    {
+      if (expression[index + 1].ToString() == " ")
+      {
+        localTocensFilo.Push(element);
+        break;
+      }
+    }
     if (numbersList.Contains(element))
     {
       numbers.Push(element);
@@ -101,11 +110,10 @@ List<string> InfixToPostfix(List<string> expression)
     }
     if (!numbersList.Contains(element))
     {
-      if (element == "(" || element == "*" || element == "/" || element == "^")
+      if (element == "(" || element == "+" || element == "*" || element == "/" || element == "^")
         operatorStuck.Push(element);
-      if (element == "+" || element == "-")
+      if (element == "-")
       {
-
         operatorStuck.Push((element));
       }
 
