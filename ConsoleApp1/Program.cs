@@ -14,7 +14,32 @@ while (go)
   for (var i = 0; i != tokens.Count; i++)
   {
     var element = tokens[i];
-    if (element == "*" || element == "/" || element == "^")
+    if (element == "^")
+    {
+      var w8 = new List<string>();
+      for (int j = 0; j < i - 1; j++)
+      {
+        w8.Add(tokens[j]);
+      }
+
+      if (tokens[i - 1] == "(" || tokens[i + 1] == "(" || tokens[i + 1] == ")" || tokens[i - 1] == ")")
+      {
+        break;
+      }
+      w8.Add("(");
+      w8.Add(tokens[i - 1]);
+      w8.Add(tokens[i]);
+      w8.Add(tokens[i + 1]);
+      w8.Add(")");
+      for (int j = i + 2; j < tokens.Count; j++)
+      {
+        w8.Add(tokens[j]);
+      }
+
+      tokens = w8;
+      i += 2;
+    }
+    if (element == "*" || element == "/")
     {
       var w8 = new List<string>();
       for (int j = 0; j < i - 1; j++)
@@ -43,6 +68,7 @@ while (go)
   var postfixTokens = InfixToPostfix(tokens);
   var result = Calculate((postfixTokens));
   Console.WriteLine(result);
+  go = false;
 }
 
 List<string> Tokenized(string expression)
@@ -60,7 +86,8 @@ List<string> Tokenized(string expression)
       if (expression[index + 1].ToString() == " ")
       {
         localTocensFilo.Push(element);
-        break;
+        index++;
+        continue;
       }
     }
     if (numbersList.Contains(element))
@@ -115,6 +142,8 @@ List<string> InfixToPostfix(List<string> expression)
       if (element == "-")
       {
         operatorStuck.Push((element));
+        currentElement++;
+        continue;
       }
 
       if (element == ")")
@@ -170,14 +199,14 @@ int Calculate(List<string> expression)
     {
       var a = int.Parse(stackToWorkWith.Pop());
       var b = int.Parse(stackToWorkWith.Pop());
-      var c = a - b;
+      var c = b - a;
       stackToWorkWith.Push(c.ToString());
     }
     if (element == "/")
     {
       var a = int.Parse(stackToWorkWith.Pop());
       var b = int.Parse(stackToWorkWith.Pop());
-      var c = a / b;
+      var c = b / a;
       stackToWorkWith.Push(c.ToString());
     }
     if (element == "*")
