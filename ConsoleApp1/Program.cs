@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using ConsoleApp1;
 using System.Linq;
@@ -73,7 +72,7 @@ while (go)
 
 List<string> Tokenized(string expression)
 {
-  string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-" };
+  string[] numbersList = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", ".", ","};
   string[] mathChars = {"+", "*", "/", "(", ")", "^"};
   var numbers = new RawFifo();
   var localTocensFilo = new RawFifo();
@@ -131,7 +130,7 @@ List<string> InfixToPostfix(List<string> expression)
   while (currentElement != nOfTokens)
   {
     var element = expression[currentElement];
-    if (int.TryParse(element, out _))
+    if (float.TryParse(element, out _))
     {
       postfixList.Add(element);
     }
@@ -176,57 +175,55 @@ List<string> InfixToPostfix(List<string> expression)
 }
 
 
-int Calculate(List<string> expression)
+float Calculate(List<string> expression)
 {
   var stackToWorkWith = new ConsoleApp1.Stack<string>();
   var turn = 0;
   while (turn != expression.Count)
   {
     var element = expression[turn];
-    if (int.TryParse(element, out _))
+    if (float.TryParse(element, out _))
     {
       stackToWorkWith.Push(element);
     }
 
     if (element == "+")
     {
-      var a = int.Parse(stackToWorkWith.Pop());
-      var b = int.Parse(stackToWorkWith.Pop());
+      var a = float.Parse(stackToWorkWith.Pop());
+      var b = float.Parse(stackToWorkWith.Pop());
       var c = a + b;
       stackToWorkWith.Push(c.ToString());
     }
     if (element == "-")
     {
-      var a = int.Parse(stackToWorkWith.Pop());
-      var b = int.Parse(stackToWorkWith.Pop());
+      var a = float.Parse(stackToWorkWith.Pop());
+      var b = float.Parse(stackToWorkWith.Pop());
       var c = b - a;
       stackToWorkWith.Push(c.ToString());
     }
     if (element == "/")
     {
-      var a = int.Parse(stackToWorkWith.Pop());
-      var b = int.Parse(stackToWorkWith.Pop());
+      var a = float.Parse(stackToWorkWith.Pop());
+      var b = float.Parse(stackToWorkWith.Pop());
       var c = b / a;
       stackToWorkWith.Push(c.ToString());
     }
     if (element == "*")
     {
-      var a = int.Parse(stackToWorkWith.Pop());
-      var b = int.Parse(stackToWorkWith.Pop());
+      var a = float.Parse(stackToWorkWith.Pop());
+      var b = float.Parse(stackToWorkWith.Pop());
       var c = a * b;
       stackToWorkWith.Push(c.ToString());
     }
     if (element == "^")
     {
-      var a = int.Parse(stackToWorkWith.Pop());
-      var b = int.Parse(stackToWorkWith.Pop());
+      var a = float.Parse(stackToWorkWith.Pop());
+      var b = float.Parse(stackToWorkWith.Pop());
       var c = Math.Pow(b, a).ToString();
       stackToWorkWith.Push(c);
     }
     turn++;
   }
 
-  return int.Parse(stackToWorkWith.Pop());
+  return float.Parse(stackToWorkWith.Pop());
 }
-
-
